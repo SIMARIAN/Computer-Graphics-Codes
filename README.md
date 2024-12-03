@@ -1,5 +1,5 @@
 <h4>The codes for graphics.h library in c++</h4>
-<h5>Topics covered:</h5>
+Topics covered:
 <ol>
   <li>Bresenham’s line drawing algorithm</li>
   <li>Midpoint circle drawing algorithm</li>

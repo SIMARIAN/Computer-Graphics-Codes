@@ -1,0 +1,22 @@
+#include<iostream>
+#include<graphics.h>
+#include<cmath>
+using namespace std;
+
+int main(){
+int i;
+double t,xt,yt;
+int window1 = initwindow(800,800);
+
+int x1[4]={200,100,200,250};
+int y1[4]={200,150,75,100};
+outtextxy(50,50,"Hermite Curve");
+for(t=0;t<=1;t=t+0.00001){
+xt=x1[0]*(2*pow(t,3)-(3*t*t)+1)+x1[1]*(-2*pow(t,3)+(3*t*t))+x1[2]*(pow(t,3)-(2*t*t)+t)+x1[3]*(pow(t,3)-(t*t));
+yt=y1[0]*(2*pow(t,3)-(3*t*t)+1)+y1[1]*(-2*pow(t,3)+(3*t*t))+y1[2]*(pow(t,3)-(2*t*t)+t)+y1[3]*(pow(t,3)-(t*t));
+putpixel (xt, yt,WHITE);}
+for (i=0; i<4; i++){
+putpixel (x1[i], y1[i], YELLOW);
+delay(9000);}
+return 0; 
+}

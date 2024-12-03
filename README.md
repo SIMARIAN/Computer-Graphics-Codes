@@ -1,5 +1,4 @@
-<h3>The codes for graphics.h library in c++</h3>
-<br>
+<h4>The codes for graphics.h library in c++</h4>
 <h5>Topics covered:</h5>
 <ol>
   <li>Bresenham’s line drawing algorithm</li>
@@ -12,12 +11,3 @@
   <li>Hermite curve</li>
   <li>Bezier curve</li>
 </ol>
-a) Bresenham’s line drawing algorithm
-b) Midpoint circle drawing algorithm
-c) Cohen and Sutherland line clipping algorithm
-d) Sutherland Hodgemann algorithm
-e) Scan line fill algorithm
-f) 2D transformations on a 2D object
-g) 3D transformations on a 3D object
-h) Hermite curve
-i) Bezier curve

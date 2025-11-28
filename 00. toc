@@ -1,0 +1,630 @@
+Question 1. Design a Finite Automata (FA) that accepts all strings over S = {0, 1} having three consecutive 1's as a substring. Write a program to simulate this FA.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void State1(string w, int i);
+void State2(string w, int i);
+void State3(string w, int i);
+void State4(string w, int i);
+int main() {
+    string str;
+    cout << "Enter the string: ";
+    cin >> str;
+    State1(str, 0);
+    return 0;
+}
+void State1(string w, int i) {
+    cout << "State 1" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == '1')
+            State2(w, i + 1);
+        if (w[i] == '0')
+            State1(w, i + 1);
+    }}
+void State2(string w, int i) {
+    cout << "State 2" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == '1')
+            State3(w, i + 1);
+        if (w[i] == '0')
+            State1(w, i + 1);
+    }}
+void State3(string w, int i) {
+    cout << "State 3" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == '1')
+            State4(w, i + 1);
+        if (w[i] == '0')
+            State1(w, i + 1);
+    }}
+void State4(string w, int i) {
+    cout << "State 4" << endl;
+    if (i == w.length()) {
+        cout << "String is accepted" << endl;
+        return;}
+    else
+        if (w[i] == '1' || w[i] == '0')
+            State4(w, i + 1);
+}
+
+Question 2. Design a Finite Automata (FA) that accepts all strings over S={0, 1} having either exactly two 1's or exactly three 1's, not more nor less Write a program to simulate this FA.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void State1(string w, int i);
+void State2(string w, int i);
+void State3(string w, int i);
+void State4(string w, int i);
+void State5(string w, int i);
+
+int main() {
+    string str;
+    cout << "Enter the string: ";
+    cin >> str;
+    State1(str, 0);
+    return 0;
+}
+void State1(string w, int i) {
+    cout << "State 1" << endl;
+    if (i == w.length()) {
+        cout << "String is accepted" << endl;
+        return;}
+    else {
+        if (w[i] == '1')
+            State2(w, i + 1);
+        if (w[i] == '0')
+            State1(w, i + 1);
+    }}
+void State2(string w, int i) {
+    cout << "State 2" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == '1')
+            State3(w, i + 1);
+        if (w[i] == '0')
+            State2(w, i + 1);
+    }}
+void State3(string w, int i) {
+    cout << "State 3" << endl;
+    if (i == w.length()) {
+        cout << "String is accepted" << endl;
+        return;}
+    else {
+        if (w[i] == '1')
+            State4(w, i + 1);
+        if (w[i] == '0')
+            State3(w, i + 1);
+    }}
+void State4(string w, int i) {
+    cout << "State 4" << endl;
+    if (i == w.length()) {
+        cout << "String is accepted" << endl;
+        return;}
+    else {
+        if (w[i] == '1')
+            State5(w, i + 1);
+        if (w[i] == '0')
+            State4(w, i + 1);
+    }}
+void State5(string w, int i) {
+    cout << "State 5" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else
+        if (w[i] == '1' || w[i] == '0')
+            State5(w, i + 1);
+    }
+
+3. Design a Finite Automata (FA) that accepts language L1, over S={a, b}, comprising of all strings (of length 4 or more) having first two characters same as the last two. Write a program to simulate this FA.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void State0(string w, int i);
+void State1(string w, int i);
+void State2(string w, int i);
+void State3(string w, int i);
+void State4(string w, int i);
+void State5(string w, int i);
+void State6(string w, int i);
+void State7(string w, int i);
+void State8(string w, int i);
+void State9(string w, int i);
+void State10(string w, int i);
+void State11(string w, int i);
+void State12(string w, int i);
+void State13(string w, int i);
+void State14(string w, int i);
+
+int main() {
+    string str;
+    cout << "Enter the string: ";
+    cin >> str;
+    State0(str, 0);
+    return 0;
+}
+void State0(string w, int i) {
+    cout << "State 0" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State1(w, i + 1);
+        if (w[i] == 'b')
+            State8(w, i + 1);
+}}
+void State1(string w, int i) {
+    cout << "State 1" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State2(w, i + 1);
+        if (w[i] == 'b')
+            State5(w, i + 1);
+    }}
+void State2(string w, int i) {
+    cout << "State 2" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State3(w, i + 1);
+        if (w[i] == 'b')
+            State2(w, i + 1);
+    }}
+void State3(string w, int i) {
+    cout << "State 3" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State4(w, i + 1);
+        if (w[i] == 'b')
+            State2(w, i + 1);
+    }}
+void State4(string w, int i) {
+    cout << "State 4" << endl;
+    if (i == w.length()) {
+        cout << "String is accepted" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State4(w, i + 1);
+        if (w[i] == 'b')
+            State2(w, i + 1);
+    }}
+void State5(string w, int i) {
+    cout << "State 5" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State6(w, i + 1);
+        if (w[i] == 'b')
+            State5(w, i + 1);
+    }}
+void State6(string w, int i) {
+    cout << "State 6" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State6(w, i + 1);
+        if (w[i] == 'b')
+            State7(w, i + 1);
+    }}
+void State7(string w, int i) {
+    cout << "State 7" << endl;
+    if (i == w.length()) {
+        cout << "String is accepted" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State6(w, i + 1);
+        if (w[i] == 'b')
+            State5(w, i + 1);
+    }}
+void State8(string w, int i) {
+    cout << "State 8" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State9(w, i + 1);
+        if (w[i] == 'b')
+            State12(w, i + 1);
+    }}
+void State9(string w, int i) {
+    cout << "State 9" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State9(w, i + 1);
+        if (w[i] == 'b')
+            State10(w, i + 1);
+    }}
+void State10(string w, int i) {
+    cout << "State 10" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State11(w, i + 1);
+        if (w[i] == 'b')
+            State10(w, i + 1);
+    }}
+void State11(string w, int i) {
+    cout << "State 11" << endl;
+    if (i == w.length()) {
+        cout << "String is accepted" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State9(w, i + 1);
+        if (w[i] == 'b')
+            State10(w, i + 1);
+    }}
+void State12(string w, int i) {
+    cout << "State 12" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State12(w, i + 1);
+        if (w[i] == 'b')
+            State13(w, i + 1);
+    }}
+void State13(string w, int i) {
+    cout << "State 13" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State12(w, i + 1);
+        if (w[i] == 'b')
+            State14(w, i + 1);
+    }}
+void State14(string w, int i) {
+    cout << "State 14" << endl;
+    if (i == w.length()) {
+        cout << "String is accepted" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State12(w, i + 1);
+        if (w[i] == 'b')
+            State14(w, i + 1);
+    }}
+
+4. Design a Finite Automata (FA) that accepts language L2, over S= {a, b} where L2= a(a+b)*b. Write a program to simulate this FA. 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void State0(string w, int i);
+void State1(string w, int i);
+void State2(string w, int i);
+void State3(string w, int i);
+
+int main() {
+    string str;
+    cout << "Enter the string: ";
+    cin >> str;
+    State0(str, 0);
+    return 0;
+}
+void State0(string w, int i) {
+    cout << "State 0" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State1(w, i + 1);
+        if (w[i] == 'b')
+            State3(w, i + 1);
+}}
+void State1(string w, int i) {
+    cout << "State 1" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State1(w, i + 1);
+        if (w[i] == 'b')
+            State2(w, i + 1);
+    }}
+void State2(string w, int i) {
+    cout << "State 2" << endl;
+    if (i == w.length()) {
+        cout << "String is accepted" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State1(w, i + 1);
+        if (w[i] == 'b')
+            State2(w, i + 1);
+    }}
+void State3(string w, int i) {
+    cout << "State 3" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State3(w, i + 1);
+        if (w[i] == 'b')
+            State3(w, i + 1);
+    }}
+
+5. Design a Finite Automata (FA) that accepts language EVEN-EVEN over S={a, b}. Write a program to simulate this FA 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void State1(string w, int i);
+void State2(string w, int i);
+void State3(string w, int i);
+void State4(string w, int i);
+
+int main() {
+    string str;
+    cout << "Enter the string: ";
+    cin >> str;
+    State1(str, 0);
+    return 0;
+}
+void State1(string w, int i) {
+    cout << "State 1" << endl;
+    if (i == w.length()) {
+        cout << "String is accepted" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State2(w, i + 1);
+        if (w[i] == 'b')
+            State3(w, i + 1);
+    }}
+void State2(string w, int i) {
+    cout << "State 2" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State1(w, i + 1);
+        if (w[i] == 'b')
+            State4(w, i + 1);
+    }}
+void State3(string w, int i) {
+    cout << "State 3" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State4(w, i + 1);
+        if (w[i] == 'b')
+            State1(w, i + 1);
+    }}
+void State4(string w, int i) {
+    cout << "State 4" << endl;
+    if (i == w.length()) {
+        cout << "String is rejected" << endl;
+        return;}
+    else {
+        if (w[i] == 'a')
+            State3(w, i + 1);
+        if (w[i] == 'b')
+            State2(w, i + 1);
+}}
+
+Question 7. Design a PDA and write a program for simulating the machine which accepts the language {anbn where n>0, S= {a, b}}. 
+
+#include <iostream>
+#include <string>
+#include <stack>
+using namespace std;
+
+void Read1(const string& w, stack<char>& st, int i);
+void Read2(const string& w, stack<char>& st, int i);
+
+int main() {
+    string str;
+    cout << "Enter the string: ";
+    cin >> str;
+    stack<char> st;
+    Read1(str, st, 0);
+    return 0;}
+
+void Read1(const string& w, stack<char>& st, int i) {
+    cout << "Read1 at " << i << endl;
+    if (i == w.length()) {
+        if (st.empty())
+            cout << "String is accepted\n";
+        else
+            cout << "String is rejected\n";
+        return;}
+    if (w[i] == 'a') {
+        st.push('a');
+        Read1(w, st, i + 1);
+        return;}
+    if (w[i] == 'b')
+        if (!st.empty() && st.top() == 'a') {
+            st.pop();
+            Read2(w, st, i + 1);
+            return;}
+    cout << "String is rejected\n";}
+
+void Read2(const string& w, stack<char>& st, int i) {
+    cout << "Read2 at " << i << endl;
+    if (i == w.length()) {
+        if (st.empty())
+            cout << "String is accepted\n";
+        else
+            cout << "String is rejected\n";
+        return;}
+    if (w[i] == 'b')
+        if (!st.empty() && st.top() == 'a'){
+            st.pop();
+            Read2(w, st, i + 1);
+            return;}
+cout << "String is rejected\n";}
+
+Question 8. Design a PDA and write a program for simulating the machine which accepts the language {wXwr} w is any string over S={a, b} and wr is reverse of that string and X is a special symbol }. 
+
+#include <iostream>
+#include <string>
+#include <stack>
+using namespace std;
+
+void Read1(const string& w, stack<char>& st, int i);
+void Read2(const string& w, stack<char>& st, int i);
+
+int main() {
+    string str;
+    cout << "Enter the string: ";
+    cin >> str;
+    stack<char> st;
+    Read1(str, st, 0);
+    return 0;}
+
+void Read1(const string& w, stack<char>& st, int i) {
+    cout << "Read1 at " << i << endl;
+    if (w[i] == 'a') {
+        st.push('a');
+        Read1(w, st, i + 1);
+        return;}
+    if (w[i] == 'b') {
+        st.push('b');
+        Read1(w, st, i + 1);
+        return;}
+    if (w[i] == 'X')
+        return Read2(w, st, i + 1);
+    cout << "String is rejected\n";}
+
+void Read2(const string& w, stack<char>& st, int i) {
+    cout << "Read2 at " << i << endl;
+    if (i == w.length() && st.empty()){
+        cout << "String is accepted\n";
+        return;}
+    if (w[i] == 'a')
+        if (!st.empty() && st.top() == 'a'){
+            st.pop();
+            Read2(w, st, i + 1);
+            return;}
+    if (w[i] == 'b')
+        if (!st.empty() && st.top() == 'b'){
+            st.pop();
+            Read2(w, st, i + 1);
+            return;}
+    cout << "String is rejected\n";}
+Question 9. Design and simulate a Turing Machine that accepts the language a^nb^nc^n where n >0.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void moveRightToNext(string &tape, int &head, char target);
+bool process(string &tape);
+
+int main() {
+    string tape;
+    cout << "Enter string: ";
+    cin >> tape;
+    if (process(tape))
+        cout << "String is accepted\n";
+    else
+        cout << "String is rejected\n";
+    return 0;
+}
+
+void moveRightToNext(string &tape, int &head, char target){
+    while (head < (int)tape.size() && tape[head] != target) head++;}
+
+bool process(string &tape) {
+    int head = 0;
+    while (true) {
+        moveRightToNext(tape, head, 'a');
+        if (head == tape.size()) break;
+        tape[head] = 'd';
+        head++;
+        moveRightToNext(tape, head, 'b');
+        if (head == tape.size()) return false;
+        tape[head] = 'd';
+        head++;
+        moveRightToNext(tape, head, 'c');
+        if (head == tape.size()) return false;
+        tape[head] = 'd';
+        head = 0;
+    }
+    for (int i=0; i<tape.size(); i++)
+        if (tape[i] != 'd') return false;
+    return true;
+}
+
+Question 10. Design and simulate a Turing Machine which will increment the given binary number by 1.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool incrementTM(string &tape) {
+    int head = tape.size() - 1;
+    while (head >= 0) {
+        if (tape[head] == '0') {
+            tape[head] = '1';
+            return true;}
+        tape[head] = '0';
+        head--;
+    }
+    tape.insert(tape.begin(), '1');
+    return true;
+}
+
+int main() {
+    string tape;
+    cout << "Enter binary string: ";
+    cin >> tape;
+	incrementTM(tape);
+    cout << "Incremented string: " << tape;
+    return 0;
+}
+
+6. Write a program to simulate an FA that accepts 
+a. Union of the languages L1 and L2
+b. Intersection of the languages L1 and L2
+c. Language L1 L2 (concatenation) 
